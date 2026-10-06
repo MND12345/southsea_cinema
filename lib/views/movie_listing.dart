@@ -15,7 +15,16 @@ class MovieListing extends StatelessWidget {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: const SizedBox.shrink(),
+      body: Container(
+          child: Column(
+        children: [
+          Text("Spiderman"),
+          SizedBox(
+            height: 6,
+          ),
+          Text("21 October")
+        ],
+      )),
     );
   }
 }

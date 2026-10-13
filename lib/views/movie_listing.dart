@@ -25,7 +25,12 @@ class MovieListing extends StatelessWidget {
           SizedBox(
             height: 6,
           ),
-          Text("21 October")
+          Text("21 October"),
+           SizedBox(height: 12),
+      Text(
+        'Peter Parker protects New York as Spider-Man while facing '
+        'a new threat and coping with a world that has forgotten him.',
+      ),
         ],
       )),
     );

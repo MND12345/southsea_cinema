@@ -58,6 +58,8 @@ class _MovieListingState extends State<MovieListing> {
     DropdownMenuEntry(value: 5, label: '5'),
   ],
 ),
+const SizedBox(width: 16),
+Text('Adult (£7.50)'),
 
         ],
       )),

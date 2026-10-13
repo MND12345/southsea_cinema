@@ -18,7 +18,10 @@ class MovieListing extends StatelessWidget {
       body: Container(
           child: Column(
         children: [
-          Text("Spiderman"),
+          Text("Spiderman: Brand New Day",
+          style: TextStyle(fontSize: 22,
+          fontWeight: FontWeight.bold
+          )),
           SizedBox(
             height: 6,
           ),

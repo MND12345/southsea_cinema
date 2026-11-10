@@ -8,7 +8,7 @@ class MenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final MovieRepository movieRepository = MovieRepository();
-    final List <Movie> movies = movieRepository.getMovies();
+    final List<Movie> movies = movieRepository.getMovies();
     return Scaffold(
       appBar: AppBar(
         title: const Text('Southsea Cinema'),
@@ -20,6 +20,6 @@ class MenuScreen extends StatelessWidget {
           return MovieCard(movie: movie);
         },
       ),
-    );  
+    );
   }
 }

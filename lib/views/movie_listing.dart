@@ -4,7 +4,6 @@ import 'package:southsea_cinema/widgets/nav_drawer.dart';
 import 'package:southsea_cinema/models/movie.dart';
 import 'package:southsea_cinema/repositories/movie_repository.dart';
 
-
 class MovieListing extends StatefulWidget {
   const MovieListing({super.key});
 
@@ -17,9 +16,8 @@ class _MovieListingState extends State<MovieListing> {
   String _orderMessage = "";
 
   @override
-  
   Widget build(BuildContext context) {
-        final MovieRepository movieRepository = MovieRepository();
+    final MovieRepository movieRepository = MovieRepository();
     final Movie movie = movieRepository.getMovies()[0];
     return Scaffold(
       appBar: AppBar(
@@ -29,54 +27,49 @@ class _MovieListingState extends State<MovieListing> {
         elevation: 0,
       ),
       drawer: const NavDrawer(),
-      body: Container(
-          child: Column(
+           body: Column(
         children: [
           Text("Spiderman: Brand New Day",
-          style: TextStyle(fontSize: 22,
-          fontWeight: FontWeight.bold
-          )),
+              style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
           SizedBox(
             height: 6,
           ),
           Text("21 October"),
-           SizedBox(height: 12),
-      Text(
-        'Peter Parker protects New York as Spider-Man while facing '
-        'a new threat and coping with a world that has forgotten him.',
-      ),
-     DropdownMenu<int>(
-  initialSelection: _ticketQuantity,
-  onSelected: (int? value) {
-    if (value != null) {
-      setState(() {
-        _ticketQuantity = value;
-      });
-    }
-  },
-  dropdownMenuEntries: const [
-    DropdownMenuEntry(value: 0, label: '0'),
-    DropdownMenuEntry(value: 1, label: '1'),
-    DropdownMenuEntry(value: 2, label: '2'),
-    DropdownMenuEntry(value: 3, label: '3'),
-    DropdownMenuEntry(value: 4, label: '4'),
-    DropdownMenuEntry(value: 5, label: '5'),
-  ],
-),
-const SizedBox(width: 16),
-Text('Adult (${movie.formattedPrice})'),
-    ElevatedButton(
-      onPressed: () {
-        setState(() {
-          _orderMessage = '$_ticketQuantity tickets have now been added to the order.';
-        });
-        },
-        child: const Text('Add to order'),
-    ), 
-    Text(_orderMessage),
-      
-    
-    
+          SizedBox(height: 12),
+          Text(
+            'Peter Parker protects New York as Spider-Man while facing '
+            'a new threat and coping with a world that has forgotten him.',
+          ),
+          DropdownMenu<int>(
+            initialSelection: _ticketQuantity,
+            onSelected: (int? value) {
+              if (value != null) {
+                setState(() {
+                  _ticketQuantity = value;
+                });
+              }
+            },
+            dropdownMenuEntries: const [
+              DropdownMenuEntry(value: 0, label: '0'),
+              DropdownMenuEntry(value: 1, label: '1'),
+              DropdownMenuEntry(value: 2, label: '2'),
+              DropdownMenuEntry(value: 3, label: '3'),
+              DropdownMenuEntry(value: 4, label: '4'),
+              DropdownMenuEntry(value: 5, label: '5'),
+            ],
+          ),
+          const SizedBox(width: 16),
+          Text('Adult (${movie.formattedPrice})'),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _orderMessage =
+                    '$_ticketQuantity tickets have now been added to the order.';
+              });
+            },
+            child: const Text('Add to order'),
+          ),
+          Text(_orderMessage),
         ],
       )),
     );

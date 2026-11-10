@@ -1,6 +1,7 @@
 import 'package:southsea_cinema/models/movie.dart';
 class MovieRepository{
-  List<Movie> getMovies() {
+  List<Movie> getMovies()
+   {
     return [
       Movie(
         id: '1',
@@ -22,5 +23,13 @@ class MovieRepository{
       ),
     
     ];
+  }
+    Movie? getMovieById(String id) {
+    for (final movie in getMovies()) {
+      if (movie.id == id) {
+        return movie;
+      }
+    }
+    return null;
   }
 }

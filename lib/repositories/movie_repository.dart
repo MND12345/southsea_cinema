@@ -21,7 +21,7 @@ class MovieRepository {
         ageRating: '12A',
         screeningTime: '22 October',
         ticketPrice: 14.99,
-        posterImagePath: 'assets/images/pacific_rim.jpg',
+        posterImagePath: 'assets/images/PacificRim.jpg',
       ),
     ];
   }

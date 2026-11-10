@@ -71,7 +71,7 @@ class _MovieListingState extends State<MovieListing> {
           ),
           Text(_orderMessage),
         ],
-      )),
-    );
+        ),
+      );
   }
 }

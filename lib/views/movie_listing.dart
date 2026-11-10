@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:southsea_cinema/constants.dart';
 import 'package:southsea_cinema/widgets/nav_drawer.dart';
+import 'package:southsea_cinema/models/movie.dart';
+import 'package:southsea_cinema/repositories/movie_repository.dart';
 
 
 class MovieListing extends StatefulWidget {
@@ -17,6 +19,8 @@ class _MovieListingState extends State<MovieListing> {
   @override
   
   Widget build(BuildContext context) {
+        final MovieRepository movieRepository = MovieRepository();
+    final Movie movie = movieRepository.getMovies()[0];
     return Scaffold(
       appBar: AppBar(
         title: const Text(appTitle, style: cinemaHeaderStyle),
@@ -60,7 +64,7 @@ class _MovieListingState extends State<MovieListing> {
   ],
 ),
 const SizedBox(width: 16),
-Text('Adult (£7.50)'),
+Text('Adult (${movie.formattedPrice})'),
     ElevatedButton(
       onPressed: () {
         setState(() {
